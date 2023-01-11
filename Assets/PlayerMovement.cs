@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Gå höger och vänster
-        if (Input.GetKey(KeyCode.A) && isFree2 == false)
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += new Vector3(-2, 0, 0) * speed * Time.deltaTime;
         }
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Kollar om spelaren är på marken för att kunna hoppa igen
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.97f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        isFree = Physics2D.OverlapCapsule(wallCheck1.position, new Vector2(0.01f, 0.34f), CapsuleDirection2D.Vertical, 0, groundLayer);
+        isFree = Physics2D.OverlapCapsule(wallCheck1.position, new Vector2(0.006f, 0.34f), CapsuleDirection2D.Vertical, 0, groundLayer);
         isFree2 = Physics2D.OverlapCapsule(wallCkeck2.position, new Vector2(0.03f, 0.34f), CapsuleDirection2D.Vertical, 0, groundLayer);
     }
 }
