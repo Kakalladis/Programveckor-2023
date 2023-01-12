@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     float jumpCounter;
 
     public Transform groundCheck;
-    public LayerMask groundLayer;  
+    public LayerMask groundLayer;
     bool isGrounded;
     Vector2 vecGravity;
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             jumpCounter = 0;
         }
 
-        if(rb2d.velocity.y > 0 && isJumping)
+        if (rb2d.velocity.y > 0 && isJumping)
         {
             jumpCounter += Time.deltaTime;
             if (jumpCounter > jumpTime) isJumping = false;
