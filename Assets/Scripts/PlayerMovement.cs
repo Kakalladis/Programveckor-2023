@@ -4,33 +4,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float speed = 1f;
-    [SerializeField] public float jumpforce = 1f;
+    [SerializeField] public float speed;
+    [SerializeField] public float jumpforce;
+    [SerializeField] public float fallMultiplier;
+    [SerializeField] public float jumpMultiplier;
+    [SerializeField] public float jumpTime;
     public Rigidbody2D rb2d;
 
+    bool isJumping;
+    float jumpCounter;
+
     public Transform groundCheck;
-    public LayerMask groundLayer;
-    public Transform wallCheck1;
-    public Transform wallCkeck2;
+    public LayerMask groundLayer;  
     bool isGrounded;
-    bool isFree;
-    bool isFree2;
+    Vector2 vecGravity;
 
+    void Start()
+    {
+        vecGravity = new Vector2(0, -Physics2D.gravity.y);
+    }
 
-    // Update is called once per frame
     void Update()
     {
-        // Gå höger och vänster
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += new Vector3(-2, 0, 0) * speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.D) && isFree == false)
-        {
-            transform.position += new Vector3(2, 0, 0) * speed * Time.deltaTime;
-        }
-
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -42,20 +37,55 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Hoppa
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded && isFree == false && isFree2 == false)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            rb2d.AddForce(new Vector3(0, 1, 0) * jumpforce);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
+            isJumping = true;
+            jumpCounter = 0;
         }
 
-        if (speed >= 10)
+        if(rb2d.velocity.y > 0 && isJumping)
         {
-            speed = 10;
+            jumpCounter += Time.deltaTime;
+            if (jumpCounter > jumpTime) isJumping = false;
+
+            float t = jumpCounter / jumpTime;
+            float currentJumpM = jumpMultiplier;
+
+            if (t > 0.5f)
+            {
+                currentJumpM = jumpMultiplier * (1 - t);
+            }
+
+            rb2d.velocity += vecGravity * currentJumpM * Time.deltaTime;
         }
 
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            isJumping = false;
+            jumpCounter = 0;
+
+            if (rb2d.velocity.y > 0)
+            {
+                rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.6f);
+            }
+        }
 
         // Kollar om spelaren är på marken för att kunna hoppa igen
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.97f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        isFree = Physics2D.OverlapCapsule(wallCheck1.position, new Vector2(0.006f, 0.34f), CapsuleDirection2D.Vertical, 0, groundLayer);
-        isFree2 = Physics2D.OverlapCapsule(wallCkeck2.position, new Vector2(0.03f, 0.34f), CapsuleDirection2D.Vertical, 0, groundLayer);
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb2d.AddForce(new Vector2(speed, 0), ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb2d.AddForce(new Vector2(-speed, 0), ForceMode2D.Impulse);
+        }
     }
 }
