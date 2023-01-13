@@ -26,7 +26,7 @@ public class SpecialAttack : MonoBehaviour
             Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                
             }
         }
     }
