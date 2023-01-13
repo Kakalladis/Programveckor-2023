@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpecialAttack : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage;
+    public int damage = 1;
     public bool canShoot;
     public LineRenderer lineRenderer;
     public Transform player;
