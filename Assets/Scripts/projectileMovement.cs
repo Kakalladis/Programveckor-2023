@@ -6,7 +6,6 @@ public class projectileMovement : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D projectile;
-    bool facingRight = true;
     [SerializeField] int bulletSpeed;
 
     // Start is called before the first frame update
