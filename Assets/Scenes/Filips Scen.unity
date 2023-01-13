@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4321481500429353538, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
   projectileOffset: {fileID: 1211785530}
-  projectileCooldown: 0.1
+  projectileCooldown: 0.2
 --- !u!1 &2088638833
 GameObject:
   m_ObjectHideFlags: 0
