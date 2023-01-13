@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Kollar om spelaren är på marken för att kunna hoppa igen
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.97f, 0.2f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.7f, 0.18f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 
 
