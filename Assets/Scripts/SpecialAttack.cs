@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpecialAttack : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage;
+    public int damage = 1;
     public bool canShoot;
     public LineRenderer lineRenderer;
     public Transform player;
@@ -25,10 +25,10 @@ public class SpecialAttack : MonoBehaviour
 
         if (hitInfo)
         {
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+            EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                
+                enemy.TakeDamage(2);
             }
 
             if (player.rotation == Quaternion.Euler(0, -180, 0))
