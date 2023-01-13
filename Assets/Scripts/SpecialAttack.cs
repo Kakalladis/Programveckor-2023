@@ -25,10 +25,10 @@ public class SpecialAttack : MonoBehaviour
 
         if (hitInfo)
         {
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+            EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                
+                enemy.TakeDamage(2);
             }
 
             if (player.rotation == Quaternion.Euler(0, -180, 0))
