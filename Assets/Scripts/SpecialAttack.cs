@@ -10,12 +10,14 @@ public class SpecialAttack : MonoBehaviour
     public LineRenderer lineRenderer;
     public Transform player;
 
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(Shoot());
+            canShoot = false;
         }
     }
 
@@ -60,5 +62,12 @@ public class SpecialAttack : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         lineRenderer.enabled = false;
+
     }
+
+
+
+
+
+
 }
