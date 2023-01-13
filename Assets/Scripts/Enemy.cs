@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject enemy;
-    public GameObject enemyProjectile;
-    public GameObject enemyProjectileClone;
+    [SerializeField] float moveSpeed = 1f;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +17,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
        
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }
