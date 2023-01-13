@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float enemyHealth, maxHealth = 3f;
+    [SerializeField] int enemyHealth, maxHealth = 3;
 
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         enemyHealth -= damageAmount;
 
