@@ -6,10 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
 
-    public int maxEnergy = 10;
-    public int minEnergy = 0;
-    public int currentEnergy;
-
+    public int energyGain = 1;
     public EnergyBar energyBar;
 
 
@@ -17,8 +14,6 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         enemyHealth = maxHealth;
-        currentEnergy = minEnergy;
-        energyBar.SetMinEnergy(minEnergy);
     }
 
     // Update is called once per frame
@@ -33,14 +28,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
-            GainEnergy(1);
+            GainEnergy(energyGain);
             Destroy(gameObject);
         }
     }
 
     public void GainEnergy(int energy)
     {
-        currentEnergy += energy;
-        energyBar.SetEnergy(currentEnergy);
+        energyBar.currentEnergy += energy;
+        energyBar.SetEnergy(energyBar.currentEnergy);
     }
 }
