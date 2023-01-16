@@ -7,6 +7,8 @@ public class projectileMovement : MonoBehaviour
     [SerializeField]
     Rigidbody2D projectile;
     [SerializeField] int bulletSpeed;
+    EnemyHealth enemyHealth;
+    public int damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +20,18 @@ public class projectileMovement : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

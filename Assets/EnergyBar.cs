@@ -9,7 +9,7 @@ public class EnergyBar : MonoBehaviour
     public int minEnergy = 0;
     public int currentEnergy;
 
-    public SpecialAttack specialAttack;
+    SpecialAttack specialAttack;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class EnergyBar : MonoBehaviour
     public void SetEnergy(int energy)
     {
         slider.value = energy;
-        if (slider.value == 10)
+        if (slider.value >= 10)
         {
             specialAttack.canShoot = true;
         }
