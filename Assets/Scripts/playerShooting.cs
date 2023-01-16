@@ -30,7 +30,5 @@ public class playerShooting : MonoBehaviour
             Instantiate(projectile, projectileOffset.position, projectileOffset.rotation);
             timer = 0;
         }
-
-        print(timer);
     }
 }
