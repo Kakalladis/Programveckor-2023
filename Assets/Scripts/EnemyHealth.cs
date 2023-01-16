@@ -36,6 +36,9 @@ public class EnemyHealth : MonoBehaviour
     public void GainEnergy(int energy)
     {
         energyBar.currentEnergy += energy;
-        energyBar.SetEnergy(energyBar.currentEnergy);
+        if (energyBar.currentEnergy >=- 10)
+        {
+            energyBar.SetEnergy(energyBar.currentEnergy);
+        }
     }
 }
