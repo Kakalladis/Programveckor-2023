@@ -122,7 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 441155747991620753}
   bulletSpeed: 10
-  enemyHealth: {fileID: 0}
   damage: 1
 --- !u!61 &-2167201001464437767
 BoxCollider2D:

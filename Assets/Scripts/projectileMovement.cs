@@ -29,6 +29,10 @@ public class projectileMovement : MonoBehaviour
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "Player")
+        {
+            
+        }
         else
         {
             Destroy(gameObject);
