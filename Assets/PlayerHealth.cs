@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int maxHealth = 10;
     public int currentHealth;
+    public Animator animator;
 
     public HealthBar healthBar;
 
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Take Damage");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 
@@ -39,6 +41,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        animator.SetBool("Is Dead", true);
+        animator.SetTrigger("Die");
         print("Player Dead");
     }
 }

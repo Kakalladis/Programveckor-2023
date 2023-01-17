@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float fallMultiplier;
     [SerializeField] public float jumpMultiplier;
     [SerializeField] public float jumpTime;
+    public Animator animator;
     public Rigidbody2D rb2d;
 
     bool isJumping;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
             isJumping = true;
             jumpCounter = 0;
+            animator.SetTrigger("Jump");
         }
 
         if (rb2d.velocity.y > 0 && isJumping)
@@ -73,6 +76,14 @@ public class PlayerMovement : MonoBehaviour
 
         // Kollar om spelaren är på marken för att kunna hoppa igen
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.7f, 0.18f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        if (isGrounded == false)
+        {
+            animator.SetBool("Is In Air", true);
+        }
+        else
+        {
+            animator.SetBool("Is In Air", false);
+        }
     }
 
 
@@ -81,11 +92,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb2d.AddForce(new Vector2(speed, 0), ForceMode2D.Impulse);
+            animator.SetFloat("Walking speed", 1);
         }
+        else if (Input.GetKey(KeyCode.A))
 
-        if (Input.GetKey(KeyCode.A))
         {
             rb2d.AddForce(new Vector2(-speed, 0), ForceMode2D.Impulse);
+            animator.SetFloat("Walking speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("Walking speed", 0);
+
         }
     }
 }
