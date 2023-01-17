@@ -10,5 +10,8 @@ EditorBuildSettings:
     guid: fc0397c4f9ce0444ba7b6da419dd0c82
   - enabled: 1
     path: "Assets/Scenes/Scener f\xF6r spelet/Level.unity"
-    guid: e61a09f97a70c8c46a72ad721540222d
+    guid: c56f51ea9beead7478878d16aabda5fd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
