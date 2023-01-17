@@ -2,45 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy2Projectile : MonoBehaviour
+public class Enemy3Projectile : MonoBehaviour
 {
-    public GameObject enemyProjectile;
+
+    
 
     public PlayerHealth playerHealth;
 
     public int damage = 1;
-
-    // public float life = 1;
-
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        transform.position += new Vector3(0, -5, 0) * Time.deltaTime;
-
-        Destroy(this.gameObject, 2);
-    }
-    
-    
+        Destroy(this.gameObject, 3);
         
-    
+    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(damage);
-            Destroy(enemyProjectile);
-
+            playerHealth.currentHealth -= damage;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(enemyProjectile);
+            Destroy(this.gameObject);
         }
     }
-}
 
+}
