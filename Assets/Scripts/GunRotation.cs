@@ -15,18 +15,18 @@ public class GunRotation : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -135));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, -40));
         }
 
         else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.UpArrow))
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -45));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -40));
         }
 
 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
 
             
         }
@@ -38,7 +38,7 @@ public class GunRotation : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, -90));
         }
 
 
