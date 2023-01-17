@@ -14,6 +14,7 @@ public class SpecialAttack : MonoBehaviour
 
     void Start()
     {
+        energyBar = FindObjectOfType<EnergyBar>();
         canShoot = false;
     }
 
