@@ -20,15 +20,16 @@ public class Enemy3Projectile : MonoBehaviour
     void Update()
     {
         Destroy(this.gameObject, 3);
+        
     }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(damage);
-            Destroy(this.gameObject);
-
+            playerHealth.currentHealth -= damage;
+            Destroy(gameObject);
         }
         else
         {
