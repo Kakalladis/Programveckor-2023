@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Enemy3Projectile : MonoBehaviour
 {
-
-    
-
     public PlayerHealth playerHealth;
 
     public int damage = 1;
@@ -19,8 +16,7 @@ public class Enemy3Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this.gameObject, 3);
-        
+        Destroy(this.gameObject, 3); 
     }
    
 
@@ -28,7 +24,7 @@ public class Enemy3Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.currentHealth -= damage;
+            playerHealth.TakeDamage(damage);
             Destroy(gameObject);
         }
         else

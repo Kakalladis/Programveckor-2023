@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -976533989262099631, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
+      propertyPath: bulletSpeed
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4321481500429353538, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
       propertyPath: m_Name
-      value: Projectile (anim)
+      value: Projectile (anim) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8910920151268430319, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
       propertyPath: m_RootOrder
