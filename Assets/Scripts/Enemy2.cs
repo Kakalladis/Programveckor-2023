@@ -15,6 +15,7 @@ public class Enemy2 : MonoBehaviour
 
     
 
+   
     public float timer;
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,7 @@ public class Enemy2 : MonoBehaviour
     void Shoot()
     {
         
-        enemyProjectilePrefab = Instantiate(enemyProjectile, new Vector3(enemy.transform.position.x, enemy.transform.position.y, 0), enemy.transform.rotation) as GameObject;
+        enemyProjectilePrefab = Instantiate(enemyProjectile, new Vector3(eProjectileSpawnPoint.transform.position.x, eProjectileSpawnPoint.transform.position.y, 0), eProjectileSpawnPoint.transform.rotation) as GameObject;
 
     }
 }
