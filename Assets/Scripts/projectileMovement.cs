@@ -33,8 +33,12 @@ public class projectileMovement : MonoBehaviour
         {
             
         }
-        else
+        else if (collision.gameObject.tag == "Bullet")
         {
+
+        }
+        else
+                {
             Destroy(gameObject);
         }
     }

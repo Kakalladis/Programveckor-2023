@@ -5,14 +5,19 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
+    public Enemy3 enemy3;
 
     public int energyGain = 1;
     public EnergyBar energyBar;
-
+    public Animator enemy3Animator;
+    public Animator enemy2Animator;
+    public Animator enemy1Animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemy3 = GetComponent<Enemy3>();
+        energyBar = FindObjectOfType<EnergyBar>();
         enemyHealth = maxHealth;
     }
 
@@ -20,10 +25,13 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealth -= damageAmount;
 
-        if (enemyHealth <= 0)
+        if (enemyHealth == 0)
         {
+            enemy3Animator.SetTrigger("Turret Die");
             GainEnergy(energyGain);
-            Destroy(gameObject);
+            enemy3.enabled = false;
+
+            Destroy(this.gameObject, 2f);
         }
     }
 

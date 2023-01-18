@@ -15,6 +15,7 @@ public class Enemy3 : MonoBehaviour
     public Transform Shootpoint;
     public float Force;
 
+
     // Start is called before the first frame update
     void Start()
     {
