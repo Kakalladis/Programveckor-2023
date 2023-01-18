@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 1842900622}
   - component: {fileID: 1842900621}
   - component: {fileID: 1842900620}
-  - component: {fileID: 1842900623}
+  - component: {fileID: 1842900624}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -483,7 +483,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1842900623
+--- !u!114 &1842900624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,9 +492,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842900619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59d87d9bb63c75459c0d9f0189b3398, type: 3}
+  m_Script: {fileID: 11500000, guid: 655e44fa8705ff14e8083419f4042d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1862873535}
 --- !u!1 &1862873531
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +510,7 @@ GameObject:
   - component: {fileID: 1862873540}
   - component: {fileID: 1862873541}
   - component: {fileID: 1862873542}
+  - component: {fileID: 1862873543}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -628,6 +630,7 @@ MonoBehaviour:
   fallMultiplier: 10
   jumpMultiplier: 10
   jumpTime: 0.2
+  animator: {fileID: 1862873543}
   rb2d: {fileID: 1862873541}
   groundCheck: {fileID: 1387234096}
   groundLayer:
@@ -650,9 +653,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 6
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1862873542
 MonoBehaviour:
@@ -669,6 +672,26 @@ MonoBehaviour:
   projectile: {fileID: 4321481500429353538, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
   projectileOffset: {fileID: 1211785530}
   projectileCooldown: 0.2
+--- !u!95 &1862873543
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862873531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a495b8d5acfa4644397aa5fe5db919d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2088638833
 GameObject:
   m_ObjectHideFlags: 0

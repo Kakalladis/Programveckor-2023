@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float fallMultiplier;
     [SerializeField] public float jumpMultiplier;
     [SerializeField] public float jumpTime;
+    [SerializeField] AudioSource footStep;
+    [SerializeField] float footstepInterval;
     public Animator animator;
     public Rigidbody2D rb2d;
+    float timer;
+
 
     bool isJumping;
     float jumpCounter;
@@ -23,12 +27,20 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
+        timer = 0;
     }
 
     void Update()
     {
+        timer += Time.deltaTime;
+        if (isGrounded == true && timer > footstepInterval && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        {
+            footStep.Play(0);
+            timer = 0;
+        }
+        
 
-        if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }

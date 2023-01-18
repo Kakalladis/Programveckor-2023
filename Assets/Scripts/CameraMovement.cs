@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         currentPos.x = Player.transform.position.x + 4.5f;
-        currentPos.y = Player.transform.position.y + 3.5f;
+        currentPos.y = Player.transform.position.y + 2.5f;
         currentPos.z = -10;
         transform.position = currentPos;
     }
