@@ -16,16 +16,19 @@ public class SpecialAttack : MonoBehaviour
     public float fadeInSpeed = 1.0f;
     private Color startColor;
     private Color endColor;
+    private Color originalStartColor;
+    private Color originalEndColor;
+
 
     void Start()
     {
         energyBar = FindObjectOfType<EnergyBar>();
         canShoot = false;
 
-
-
-        startColor = lineRenderer.startColor;
-        endColor = lineRenderer.endColor;
+        originalStartColor = lineRenderer.startColor;
+        originalEndColor = lineRenderer.endColor;
+        startColor = originalStartColor;
+        endColor = originalEndColor;
     }
 
     void Update()
@@ -34,6 +37,7 @@ public class SpecialAttack : MonoBehaviour
         {
             StartCoroutine(Shoot());
             energyBar.SetEnergy(energyBar.minEnergy);
+            energyBar.currentEnergy = energyBar.minEnergy;
             canShoot = false;
         }
     }
@@ -65,9 +69,7 @@ public class SpecialAttack : MonoBehaviour
         }
 
         FadeIn();
-
         yield return new WaitForSeconds(1.5f);
-
         FadeOut();
     }
 
@@ -96,6 +98,8 @@ public class SpecialAttack : MonoBehaviour
 
     IEnumerator FadeOutEffect()
     {
+        startColor = lineRenderer.startColor;
+        endColor = lineRenderer.endColor;
         float elapsedTime = 0;
         while (elapsedTime < 1)
         {
@@ -105,6 +109,9 @@ public class SpecialAttack : MonoBehaviour
             lineRenderer.endColor = Color.Lerp(endColor, new Color(endColor.r, endColor.g, endColor.b, 0), elapsedTime);
             elapsedTime += Time.deltaTime * fadeOutSpeed;
             yield return null;
+            lineRenderer.startColor = originalStartColor;
+            lineRenderer.endColor = originalEndColor;
         }
+        lineRenderer.enabled = false;
     }
 }
