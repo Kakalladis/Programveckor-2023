@@ -10,37 +10,38 @@ public class Enemy2Projectile : MonoBehaviour
 
     public int damage = 1;
 
-    // public float life = 1;
+     public float life = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+       
         
+            playerHealth = FindObjectOfType<PlayerHealth>();
+        
+
     }
 
     private void Update()
     {
         transform.position += new Vector3(0, -5, 0) * Time.deltaTime;
 
-        Destroy(this.gameObject, 2);
+        //Destroy(this.gameObject, 2);
     }
-    
-    
-        
-    
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(damage);
-            Destroy(enemyProjectile);
-
+            playerHealth.currentHealth -= damage;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(enemyProjectile);
+            Destroy(this.gameObject);
         }
     }
+
 }
 
