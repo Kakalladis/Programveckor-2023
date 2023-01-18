@@ -5450,7 +5450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0378c0ba82470a419b4f8ee2cdc3511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4321481500429353538, guid: d57658fbbaf6f494cabbc10e764360fa, type: 3}
+  projectile: {fileID: 5263215126804489681, guid: 75553a71c87511042b562384d77f6588, type: 3}
   projectileOffset: {fileID: 1237692798}
   projectileCooldown: 0.2
 --- !u!114 &1862873545
