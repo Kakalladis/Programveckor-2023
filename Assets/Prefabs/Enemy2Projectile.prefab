@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyProjectile: {fileID: 5142363991520784593}
+  playerHealth: {fileID: 0}
+  damage: 1
   life: 3
 --- !u!58 &-177525955992771365
 CircleCollider2D:

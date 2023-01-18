@@ -13,7 +13,7 @@ public class Enemy3Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     // Update is called once per frame
