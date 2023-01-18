@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy2Projectile : MonoBehaviour
 {
+
     public GameObject enemyProjectile;
 
     public PlayerHealth playerHealth;

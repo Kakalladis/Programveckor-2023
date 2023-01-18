@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
 
+    [SerializeField]
+    AudioSource hurtSound;
+
     public int maxHealth = 10;
     public int currentHealth;
     public Animator animator;
@@ -24,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("Take Damage");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        hurtSound.Play(0);
+
 
         if (currentHealth <= 0)
         {
