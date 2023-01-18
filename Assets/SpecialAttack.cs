@@ -12,10 +12,23 @@ public class SpecialAttack : MonoBehaviour
     public bool canShoot;
     EnergyBar energyBar;
 
+    public float fadeOutSpeed = 1.0f;
+    public float fadeInSpeed = 1.0f;
+    private Color startColor;
+    private Color endColor;
+    private Color originalStartColor;
+    private Color originalEndColor;
+
+
     void Start()
     {
         energyBar = FindObjectOfType<EnergyBar>();
         canShoot = false;
+
+        originalStartColor = lineRenderer.startColor;
+        originalEndColor = lineRenderer.endColor;
+        startColor = originalStartColor;
+        endColor = originalEndColor;
     }
 
     void Update()
@@ -24,6 +37,7 @@ public class SpecialAttack : MonoBehaviour
         {
             StartCoroutine(Shoot());
             energyBar.SetEnergy(energyBar.minEnergy);
+            energyBar.currentEnergy = energyBar.minEnergy;
             canShoot = false;
         }
     }
@@ -54,10 +68,50 @@ public class SpecialAttack : MonoBehaviour
             lineRenderer.SetPosition(1, firePoint.position + new Vector3(6, 0, 0));
         }
 
+        FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        FadeOut();
+    }
+
+    public void FadeIn()
+    {
         lineRenderer.enabled = true;
+        lineRenderer.startColor = new Color(startColor.r, startColor.g, startColor.b, 0);
+        lineRenderer.endColor = new Color(endColor.r, endColor.g, endColor.b, 0);
+        StartCoroutine(Fade());
+    }
 
-        yield return new WaitForSeconds(0.2f);
+    IEnumerator Fade()
+    {
+        while (lineRenderer.startColor.a < 1.0f)
+        {
+            lineRenderer.startColor = Color.Lerp(lineRenderer.startColor, startColor, fadeInSpeed * Time.deltaTime);
+            lineRenderer.endColor = Color.Lerp(lineRenderer.endColor, endColor, fadeInSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
 
+    public void FadeOut()
+    {
+        StartCoroutine(FadeOutEffect());
+    }
+
+    IEnumerator FadeOutEffect()
+    {
+        startColor = lineRenderer.startColor;
+        endColor = lineRenderer.endColor;
+        float elapsedTime = 0;
+        while (elapsedTime < 1)
+        {
+            startColor = lineRenderer.startColor;
+            endColor = lineRenderer.endColor;
+            lineRenderer.startColor = Color.Lerp(startColor, new Color(startColor.r, startColor.g, startColor.b, 0), elapsedTime);
+            lineRenderer.endColor = Color.Lerp(endColor, new Color(endColor.r, endColor.g, endColor.b, 0), elapsedTime);
+            elapsedTime += Time.deltaTime * fadeOutSpeed;
+            yield return null;
+            lineRenderer.startColor = originalStartColor;
+            lineRenderer.endColor = originalEndColor;
+        }
         lineRenderer.enabled = false;
     }
 }
