@@ -12,6 +12,8 @@ public class playerShooting : MonoBehaviour
     [SerializeField]
     float projectileCooldown;
     float timer;
+    [SerializeField]
+    AudioSource audioSource;
 
     
 
@@ -19,6 +21,7 @@ public class playerShooting : MonoBehaviour
     void Start()
     {
         timer = 0;
+        audioSource.Play(0);
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class playerShooting : MonoBehaviour
         if(timer > projectileCooldown && Input.GetKey(KeyCode.Space))
         {
             Instantiate(projectile, projectileOffset.position, projectileOffset.rotation);
+            audioSource.Play(0);
             timer = 0;
         }
     }
