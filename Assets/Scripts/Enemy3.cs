@@ -14,7 +14,8 @@ public class Enemy3 : MonoBehaviour
     float nextTimeToFire = 0;
     public Transform Shootpoint;
     public float Force;
-
+    public bool facingRight = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,10 @@ public class Enemy3 : MonoBehaviour
                 shoot();
             }
         }
+        if (Target.transform.position.x > gameObject.transform.position.x && facingRight)
+            Flip();
+        if (Target.transform.position.x < gameObject.transform.position.x && !facingRight)
+            Flip();
     }
 
     void shoot()
@@ -71,5 +76,18 @@ public class Enemy3 : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, Range);
+    }
+
+
+    
+   
+
+    void Flip()
+    {
+        
+        facingRight = !facingRight;
+        Vector3 tmpScale = gameObject.transform.localScale;
+        tmpScale.x *= -1;
+        gameObject.transform.localScale = tmpScale;
     }
 }
