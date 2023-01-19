@@ -35,7 +35,7 @@ public class Enemy2Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.currentHealth -= damage;
+            playerHealth.TakeDamage(damage);
             Destroy(gameObject);
         }
         else
