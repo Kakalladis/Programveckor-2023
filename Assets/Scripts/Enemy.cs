@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = FindObjectOfType<PlayerHealth>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -43,12 +44,11 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             playerHealth.TakeDamage(damage);
         }
     }
-
 }
