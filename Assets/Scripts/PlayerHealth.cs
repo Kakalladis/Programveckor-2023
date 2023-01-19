@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public bool playGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +44,6 @@ public class PlayerHealth : MonoBehaviour
         animator.SetBool("Is Dead", true);
         animator.SetTrigger("Die");
         print("Player Dead");
+        playGame = false;
     }
 }

@@ -11,7 +11,7 @@ public class Enemy2Projectile : MonoBehaviour
 
     public int damage = 1;
 
-     public float life = 1;
+     
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class Enemy2Projectile : MonoBehaviour
     {
         transform.position += new Vector3(0, -5, 0) * Time.deltaTime;
 
-        //Destroy(this.gameObject, 2);
+        Destroy(this.gameObject, 2);
     }
 
 
