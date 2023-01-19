@@ -2,41 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Enemy1Health : MonoBehaviour
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
-    public Enemy3 enemy3;
 
     public int energyGain = 1;
     public EnergyBar energyBar;
-    public Animator enemy3Animator;
+    public Animator enemy1Animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy3 = GetComponent<Enemy3>();
         energyBar = FindObjectOfType<EnergyBar>();
         enemyHealth = maxHealth;
     }
 
     public void TakeDamage(int damageAmount)
     {
+        enemy1Animator.SetBool("Enemy 1 Damage Is Animating", true);
+        enemy1Animator.SetTrigger("Enemy 1 Damage");
+        StartCoroutine(Wait());
         enemyHealth -= damageAmount;
 
         if (enemyHealth == 0)
         {
-            enemy3Animator.SetTrigger("Turret Die");
+            enemy1Animator.SetBool("Enemy 1 Dead", true);
+            enemy1Animator.SetTrigger("Enemy 1 Die");
             GainEnergy(energyGain);
-            enemy3.enabled = false;
 
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        enemy1Animator.SetBool("Enemy 1 Damage Is Animating", false);
     }
 
     public void GainEnergy(int energy)
     {
         energyBar.currentEnergy += energy;
-        if (energyBar.currentEnergy >=- 10)
+        if (energyBar.currentEnergy >= -10)
         {
             energyBar.SetEnergy(energyBar.currentEnergy);
         }

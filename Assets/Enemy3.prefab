@@ -193,6 +193,7 @@ MonoBehaviour:
   FireRate: 1
   Shootpoint: {fileID: 2933109582475744640}
   Force: 75
+  facingRight: 0
 --- !u!50 &2933109581375421431
 Rigidbody2D:
   serializedVersion: 4
@@ -228,8 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 0
   maxHealth: 3
+  enemy3: {fileID: 0}
   energyGain: 1
   energyBar: {fileID: 0}
+  enemy3Animator: {fileID: 0}
 --- !u!61 &2933109581375421424
 BoxCollider2D:
   m_ObjectHideFlags: 0

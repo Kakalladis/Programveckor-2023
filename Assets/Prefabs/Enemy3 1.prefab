@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3954483336727496884}
   m_Layer: 0
   m_Name: Enemy3 1
-  m_TagString: Enemy
+  m_TagString: Enemy3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,8 +149,6 @@ MonoBehaviour:
   energyGain: 1
   energyBar: {fileID: 0}
   enemy3Animator: {fileID: 3954483336727496884}
-  enemy2Animator: {fileID: 0}
-  enemy1Animator: {fileID: 0}
 --- !u!61 &3954483336727496885
 BoxCollider2D:
   m_ObjectHideFlags: 0

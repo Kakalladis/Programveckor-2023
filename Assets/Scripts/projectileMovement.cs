@@ -24,9 +24,19 @@ public class projectileMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy3")
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy2")
+        {
+            collision.gameObject.GetComponent<Enemy2Health>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy1")
+        {
+            collision.gameObject.GetComponent<Enemy1Health>().TakeDamage(damage);
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Player")
@@ -38,7 +48,7 @@ public class projectileMovement : MonoBehaviour
 
         }
         else
-                {
+        {
             Destroy(gameObject);
         }
     }

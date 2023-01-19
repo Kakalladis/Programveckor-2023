@@ -6,6 +6,8 @@ public class Enemy2 : MonoBehaviour
 {
     [SerializeField] public float speed;
     [SerializeField] GameObject player;
+    public Animator enemy2Animator;
+
 
     public GameObject enemyProjectile;
     public Transform eProjectileSpawnPoint;
@@ -80,7 +82,7 @@ public class Enemy2 : MonoBehaviour
 
     void Shoot()
     {
-        
+        enemy2Animator.SetTrigger("Enemy2 Attack");
         enemyProjectilePrefab = Instantiate(enemyProjectile, new Vector3(eProjectileSpawnPoint.transform.position.x, eProjectileSpawnPoint.transform.position.y, 0), eProjectileSpawnPoint.transform.rotation) as GameObject;
 
     }

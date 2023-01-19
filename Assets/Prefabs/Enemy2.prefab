@@ -44,10 +44,11 @@ GameObject:
   - component: {fileID: 1009591055058316613}
   - component: {fileID: 1009591055058316632}
   - component: {fileID: 1009591055058316633}
-  - component: {fileID: 1009591055058316634}
+  - component: {fileID: 3382019378186725828}
+  - component: {fileID: 4270946099737653291}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +111,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0.24273266, g: 0.11160547, b: 0.9339623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   player: {fileID: 8107781257701403092, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
+  enemy2Animator: {fileID: 4270946099737653291}
   enemyProjectile: {fileID: 5142363991520784593, guid: 031b5109c56d1314eb67f1f78407acb9, type: 3}
   eProjectileSpawnPoint: {fileID: 1009591054617658990}
   enemyProjectilePrefab: {fileID: 5142363991520784593, guid: 031b5109c56d1314eb67f1f78407acb9, type: 3}
@@ -190,7 +192,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1009591055058316634
+--- !u!114 &3382019378186725828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,14 +201,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009591055058316610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0405ec5d23a9c440a6329cd128e1338, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cf452a2d367c214ab431af170071bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 0
   maxHealth: 3
-  enemy3: {fileID: 0}
   energyGain: 1
   energyBar: {fileID: 0}
-  enemy3Animator: {fileID: 0}
-  enemy2Animator: {fileID: 0}
-  enemy1Animator: {fileID: 0}
+  enemy2Animator: {fileID: 4270946099737653291}
+--- !u!95 &4270946099737653291
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009591055058316610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0171772eb1223ea45b0707c296712bd5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

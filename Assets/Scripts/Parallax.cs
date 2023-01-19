@@ -22,7 +22,7 @@ public class Parallax : MonoBehaviour
     void LateUpdate()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
-        transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.y);
+        transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.x);
         lastCameraPosition = cameraTransform.position;
 
         if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)

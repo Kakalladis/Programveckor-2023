@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class Enemy2Health : MonoBehaviour
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
-    public Enemy3 enemy3;
+
 
     public int energyGain = 1;
     public EnergyBar energyBar;
-    public Animator enemy3Animator;
+    public Animator enemy2Animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy3 = GetComponent<Enemy3>();
         energyBar = FindObjectOfType<EnergyBar>();
         enemyHealth = maxHealth;
     }
@@ -22,21 +21,22 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         enemyHealth -= damageAmount;
+        enemy2Animator.SetTrigger("Enemy 2 Damage");
 
         if (enemyHealth == 0)
         {
-            enemy3Animator.SetTrigger("Turret Die");
+            enemy2Animator.SetBool("Enemy 2 Dead", true);
+            enemy2Animator.SetTrigger("Enemy 2 Die");
             GainEnergy(energyGain);
-            enemy3.enabled = false;
 
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
         }
     }
 
     public void GainEnergy(int energy)
     {
         energyBar.currentEnergy += energy;
-        if (energyBar.currentEnergy >=- 10)
+        if (energyBar.currentEnergy >= -10)
         {
             energyBar.SetEnergy(energyBar.currentEnergy);
         }
