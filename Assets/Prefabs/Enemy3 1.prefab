@@ -103,12 +103,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 7
-  Target: {fileID: 0}
+  Target: {fileID: 8107781257701403088, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
   Gun: {fileID: 3954483336836236280}
   bullet: {fileID: 1316480396936912908, guid: 2accbf2c07818d44484415b89eb7d469, type: 3}
   FireRate: 1
   Shootpoint: {fileID: 3954483337740412613}
   Force: 75
+  facingRight: 0
 --- !u!50 &3954483336727496882
 Rigidbody2D:
   serializedVersion: 4
