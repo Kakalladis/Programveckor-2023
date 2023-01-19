@@ -33,7 +33,7 @@ public class SpecialAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && canShoot)
+        if (Input.GetKeyDown(KeyCode.Q) && canShoot)
         {
             StartCoroutine(Shoot());
             energyBar.SetEnergy(energyBar.minEnergy);
