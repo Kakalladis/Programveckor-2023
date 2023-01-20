@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D myRigidbody;
 
     public PlayerHealth playerHealth;
+    public Animator enemy1Animator;
 
     public int damage = 1;
 
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), transform.localScale.y);
+        enemy1Animator.SetTrigger("Enemy 1 Damage");
+
     }
 
     public bool IsFacingRight()
