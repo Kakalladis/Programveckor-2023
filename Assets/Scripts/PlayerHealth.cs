@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -43,7 +44,8 @@ public class PlayerHealth : MonoBehaviour
     {
         animator.SetBool("Is Dead", true);
         animator.SetTrigger("Die");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         print("Player Dead");
-        playGame = false;
+        
     }
 }
