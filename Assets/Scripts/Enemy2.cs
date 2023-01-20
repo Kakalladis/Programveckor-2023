@@ -39,7 +39,7 @@ public class Enemy2 : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer > 2)
+        if (timer > 1)
         {
             timer = 0;
 
