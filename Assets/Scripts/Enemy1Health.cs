@@ -9,6 +9,8 @@ public class Enemy1Health : MonoBehaviour
     public int energyGain = 1;
     public EnergyBar energyBar;
     public Animator enemy1Animator;
+    [SerializeField]
+    AudioSource goombaDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class Enemy1Health : MonoBehaviour
             enemy1Animator.SetBool("Enemy 1 Dead", true);
             enemy1Animator.SetTrigger("Enemy 1 Die");
             GainEnergy(energyGain);
+            goombaDeath.Play();
 
             Destroy(this.gameObject, 1f);
         }

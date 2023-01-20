@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int enemyHealth, maxHealth = 3;
     public Enemy3 enemy3;
 
+    [SerializeField] AudioSource turretDeath;
+
     public int energyGain = 1;
     public EnergyBar energyBar;
     public Animator enemy3Animator;
@@ -28,6 +30,8 @@ public class EnemyHealth : MonoBehaviour
             enemy3Animator.SetTrigger("Turret Die");
             GainEnergy(energyGain);
             enemy3.enabled = false;
+
+            turretDeath.Play();
 
             Destroy(this.gameObject, 2f);
         }

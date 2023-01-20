@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class ObjektDestroyOnCollision : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
-    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("BlockFake1"))
+        if (other.CompareTag("PlayerBullet"))
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
 
     }

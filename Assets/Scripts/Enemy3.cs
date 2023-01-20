@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy3 : MonoBehaviour
 {
+
+    AudioSource turretShoot;
       public float Range;
     public Transform Target;
     bool Detected = false;
@@ -20,7 +22,7 @@ public class Enemy3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        turretShoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +71,7 @@ public class Enemy3 : MonoBehaviour
 
         GameObject BulletIns = Instantiate(bullet, Shootpoint.position, Quaternion.identity);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+        turretShoot.Play();
 
     }
 

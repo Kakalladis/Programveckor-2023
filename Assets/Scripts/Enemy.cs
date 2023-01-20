@@ -8,21 +8,48 @@ public class Enemy : MonoBehaviour
 
     Rigidbody2D myRigidbody;
 
+    float timer;
+
+    [SerializeField] float footstepInterval;
+
+    AudioSource goombaWalk;
+
+
     public PlayerHealth playerHealth;
     public Animator enemy1Animator;
 
     public int damage = 1;
+
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = FindObjectOfType<PlayerHealth>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        timer = 0;
+        goombaWalk = GetComponent<AudioSource>();
+        
+
     }
+
+   
+
 
     // Update is called once per frame
     void Update()
     {
+        
+
+        timer += Time.deltaTime;
+
+        if (timer > footstepInterval)
+        {
+            goombaWalk.Play();
+            timer = 0;
+        }
+
         if (IsFacingRight())
         {
             myRigidbody.velocity = new Vector2(moveSpeed, 0f);

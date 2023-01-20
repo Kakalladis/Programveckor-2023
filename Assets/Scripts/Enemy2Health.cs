@@ -6,6 +6,8 @@ public class Enemy2Health : MonoBehaviour
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
 
+    [SerializeField] AudioSource droneDeath;
+
 
     public int energyGain = 1;
     public EnergyBar energyBar;
@@ -28,6 +30,8 @@ public class Enemy2Health : MonoBehaviour
             enemy2Animator.SetBool("Enemy 2 Dead", true);
             enemy2Animator.SetTrigger("Enemy 2 Die");
             GainEnergy(energyGain);
+
+            droneDeath.Play();
 
             Destroy(this.gameObject, 1f);
         }
