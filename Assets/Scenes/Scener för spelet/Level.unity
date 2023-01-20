@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 1696277840}
     - target: {fileID: 8107781257701403047, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
       propertyPath: projectileCooldown
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8107781257701403048, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
       propertyPath: hurtSound
@@ -46684,7 +46684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3954483336727496881, guid: a4a0afcb2af38b04e9ba03c73426fc93, type: 3}
       propertyPath: Range
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3954483336727496881, guid: a4a0afcb2af38b04e9ba03c73426fc93, type: 3}
       propertyPath: Target
