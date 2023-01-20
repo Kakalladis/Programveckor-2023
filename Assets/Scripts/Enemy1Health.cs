@@ -19,9 +19,6 @@ public class Enemy1Health : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        enemy1Animator.SetBool("Enemy 1 Damage Is Animating", true);
-        enemy1Animator.SetTrigger("Enemy 1 Damage");
-        StartCoroutine(Wait());
         enemyHealth -= damageAmount;
 
         if (enemyHealth == 0)
@@ -34,11 +31,6 @@ public class Enemy1Health : MonoBehaviour
         }
     }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1f);
-        enemy1Animator.SetBool("Enemy 1 Damage Is Animating", false);
-    }
 
     public void GainEnergy(int energy)
     {

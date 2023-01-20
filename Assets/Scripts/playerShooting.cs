@@ -14,6 +14,7 @@ public class playerShooting : MonoBehaviour
     float timer;
     [SerializeField]
     AudioSource audioSource;
+    
 
     
 
@@ -21,7 +22,7 @@ public class playerShooting : MonoBehaviour
     void Start()
     {
         timer = 0;
-        audioSource.Play(0);
+        
     }
 
     // Update is called once per frame
@@ -35,4 +36,6 @@ public class playerShooting : MonoBehaviour
             timer = 0;
         }
     }
+
+    
 }

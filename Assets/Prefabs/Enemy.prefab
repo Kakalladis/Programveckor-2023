@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   playerHealth: {fileID: 0}
+  enemy1Animator: {fileID: 6942094581041481774}
   damage: 1
 --- !u!114 &-5529334462450974609
 MonoBehaviour:
