@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
     {
         animator.SetBool("Is Dead", true);
         animator.SetTrigger("Die");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         print("Player Dead");
         
