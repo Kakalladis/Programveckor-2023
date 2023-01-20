@@ -9,11 +9,14 @@ public class projectileMovement : MonoBehaviour
     [SerializeField] int bulletSpeed;
     EnemyHealth enemyHealth;
     public int damage = 1;
+    [SerializeField]
+
 
     // Start is called before the first frame update
     void Start()
     {
         projectile.velocity = transform.right * bulletSpeed;
+        
     }
 
     // Update is called once per frame
@@ -51,5 +54,14 @@ public class projectileMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+
+        
+    
+    
     }
+
+
+    
 }
