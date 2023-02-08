@@ -35,7 +35,7 @@ public class Enemy3 : MonoBehaviour
         RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range);
         if (rayInfo)
         {
-            if (rayInfo.collider.gameObject.tag == "Player")
+            if (rayInfo.collider.gameObject.tag == "Player")//detectar playern.
             {
                 if (Detected == false)
                 {
@@ -50,7 +50,7 @@ public class Enemy3 : MonoBehaviour
                 }
             }
         }
-        if (Detected)
+        if (Detected)//Sjuter mot playern.
         {
             Gun.transform.up = Direction;
             if (Time.time > nextTimeToFire)
@@ -65,7 +65,7 @@ public class Enemy3 : MonoBehaviour
             Flip();
     }
 
-    void shoot()
+    void shoot()//Gör så att bullet åker mot player.
     {
         
 
@@ -85,7 +85,7 @@ public class Enemy3 : MonoBehaviour
     
    
 
-    void Flip()
+    void Flip()//vänder på enemy om man går förbi.
     {
         
         facingRight = !facingRight;
