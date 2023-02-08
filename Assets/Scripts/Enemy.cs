@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
             timer = 0;
         }
 
-        if (IsFacingRight())
+        if (IsFacingRight())//Vänder på gubben om den går in i något eller om golvet tar slut.
         {
             myRigidbody.velocity = new Vector2(moveSpeed, 0f);
         }
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)// gör skada on contact.
     {
         if (collision.gameObject.tag == "Player")
         {
