@@ -13,8 +13,8 @@ public class soundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
+        audioSource = GetComponent<AudioSource>(); 
+        audioSource.volume = 0.5f; //Sätter volymen på musiken till 0.5
     }
 
     // Update is called once per frame
