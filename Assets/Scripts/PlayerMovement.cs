@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Gjord av Hampus
     [SerializeField] public float speed;
     [SerializeField] public float jumpforce;
     [SerializeField] public float fallMultiplier;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Footstep ljud - Filip
         timer += Time.deltaTime;
         if (isGrounded == true && timer > footstepInterval && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
@@ -39,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             timer = 0;
         }
         
-
+        // Rotera spelaren om den går vänster eller höger
             if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        // Hoppa
+        // Hoppa + inställningar om hoppet som jumpforce, fallmultiplier & mm
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpforce);
@@ -98,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    // Walking + Walking Animation
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.D))

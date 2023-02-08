@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    //Gjord av Hampus
     [SerializeField]
     AudioSource hurtSound;
 
@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    //Funktion som gör att spelaren tar skada, spelar animation och ändrar på healthbar
     public void TakeDamage(int damage)
     {
         animator.SetTrigger("Take Damage");
@@ -40,13 +41,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //Funktion för att döda spelaren och spela animation + byta till main menu
     public void Die()
     {
         animator.SetBool("Is Dead", true);
         animator.SetTrigger("Die");
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        print("Player Dead");
-        
     }
 }
