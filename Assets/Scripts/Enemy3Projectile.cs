@@ -22,8 +22,7 @@ public class Enemy3Projectile : MonoBehaviour
         Vector3 direction = Player.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
 
-        float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot+90);
+       
     }
 
     // Update is called once per frame
@@ -35,7 +34,7 @@ public class Enemy3Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")// görar skada
         {
             playerHealth.TakeDamage(damage);
             Destroy(gameObject);
