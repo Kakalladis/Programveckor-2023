@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ObjektDestroyOnCollision : MonoBehaviour
 {
-    
+    //lucas är skyldig för deta 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PlayerBullet"))
+        if (other.CompareTag("PlayerBullet")) // om spelarens skot träffar 
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // förstör objekt
         }
 
     }
