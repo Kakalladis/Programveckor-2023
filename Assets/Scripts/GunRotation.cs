@@ -11,7 +11,7 @@ public class GunRotation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //Roterar vapnet i olika vinklar beroende på knapptryck -Filip
     {
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.UpArrow))
         {

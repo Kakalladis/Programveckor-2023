@@ -29,7 +29,7 @@ public class playerShooting : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > projectileCooldown && Input.GetKey(KeyCode.Space))
+        if(timer > projectileCooldown && Input.GetKey(KeyCode.Space)) //Skjuter en projektil ifrån projectileOffset med jämna intervaller -Filip
         {
             Instantiate(projectile, projectileOffset.position, projectileOffset.rotation);
             audioSource.Play(0);
