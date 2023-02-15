@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (enemyHealth == 0)
         {
+            GetComponent<Enemy>().enabled = false;
             enemy3Animator.SetTrigger("Turret Die");
             GainEnergy(energyGain);
             enemy3.enabled = false;
