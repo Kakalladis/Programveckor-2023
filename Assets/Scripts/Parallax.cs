@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    //Gjord av Hampus
     [SerializeField] private Vector2 parallaxEffectMultiplier;
 
     private Transform cameraTransform;
@@ -19,6 +20,7 @@ public class Parallax : MonoBehaviour
         textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
     }
 
+    //Gör bakgrunden så att den är oändlig och så att den går långsammare än spelaren för att få en parallax effect
     void LateUpdate()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;

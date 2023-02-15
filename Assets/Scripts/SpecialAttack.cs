@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpecialAttack : MonoBehaviour
 {
+    //Gjord av Hampus
+
     public int damage = 2;
     public float range = 6f;
     public Transform firePoint;
@@ -42,6 +44,7 @@ public class SpecialAttack : MonoBehaviour
         }
     }
 
+    // Skjuter raycast + detekterar alla fiender i den + fade in & out
     IEnumerator Shoot()
     {
         RaycastHit2D[] hits;
@@ -68,6 +71,7 @@ public class SpecialAttack : MonoBehaviour
             lineRenderer.SetPosition(1, firePoint.position + new Vector3(6, 0, 0));
         }
 
+        // Fade in & out linerenderer
         FadeIn();
         yield return new WaitForSeconds(1.5f);
         FadeOut();
