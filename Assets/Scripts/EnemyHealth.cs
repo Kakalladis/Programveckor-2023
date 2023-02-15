@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public int energyGain = 1;
     public EnergyBar energyBar;
     public Animator enemy3Animator;
-
+    public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (enemyHealth == 0)
         {
+            moveSpeed = 0;
             enemy3Animator.SetTrigger("Turret Die");
             GainEnergy(energyGain);
             enemy3.enabled = false;
