@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009591054617658990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3382019378186725828}
   - component: {fileID: 4270946099737653291}
   - component: {fileID: -5136424033261654127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy2
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
@@ -146,6 +146,9 @@ MonoBehaviour:
   Range: 10
   Target: {fileID: 8107781257701403088, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
   facingRight: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 119
   timer: 0
 --- !u!61 &1009591055058316632
 BoxCollider2D:
@@ -338,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5519897123643841032}
   - component: {fileID: 4357558338917835215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: droneDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}

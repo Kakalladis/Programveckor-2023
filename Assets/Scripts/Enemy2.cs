@@ -20,12 +20,13 @@ public class Enemy2 : MonoBehaviour
     bool Detected = false;
     Vector2 Direction;
     public bool facingRight = false;
+    public LayerMask mask;
 
     public float timer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     
@@ -41,13 +42,16 @@ public class Enemy2 : MonoBehaviour
 
         Vector2 targetPos = Target.position;
         Direction = targetPos - (Vector2)transform.position;
-        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range);
+        Debug.DrawRay(transform.position, Direction * Range);
+        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range,mask);
         if (rayInfo)
         {
+            print(rayInfo.transform.name);
             if (rayInfo.collider.gameObject.tag == "Player")//detectar playern
             {
                 if (Detected == false)
                 {
+                    
                     Detected = true;
                 }
             }
