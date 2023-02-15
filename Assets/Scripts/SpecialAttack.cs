@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SpecialAttack : MonoBehaviour
 {
-    public int damage = 2;
-    public float range = 6f;
+
+    //Gjord av Hampus
+
+    public int damage = 3;
+    public float range = 8f;
     public Transform firePoint;
     public LineRenderer lineRenderer;
     public Transform player;
@@ -51,7 +54,17 @@ public class SpecialAttack : MonoBehaviour
         {
             RaycastHit2D hit = hits[i];
 
-            if (hit.transform.CompareTag("Enemy"))
+            if (hit.transform.CompareTag("Enemy1"))
+            {
+                hit.transform.GetComponent<Enemy1Health>().TakeDamage(damage);
+            }
+
+            if (hit.transform.CompareTag("Enemy2"))
+            {
+                hit.transform.GetComponent<Enemy2Health>().TakeDamage(damage);
+            }
+
+            if (hit.transform.CompareTag("Enemy3"))
             {
                 hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);
             }
@@ -60,12 +73,12 @@ public class SpecialAttack : MonoBehaviour
         if (player.rotation == Quaternion.Euler(0, -180, 0))
         {
             lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, firePoint.position + new Vector3(-6, 0, 0));
+            lineRenderer.SetPosition(1, firePoint.position + new Vector3(-8, 0, 0));
         }
         else
         {
             lineRenderer.SetPosition(0, firePoint.position);
-            lineRenderer.SetPosition(1, firePoint.position + new Vector3(6, 0, 0));
+            lineRenderer.SetPosition(1, firePoint.position + new Vector3(8, 0, 0));
         }
 
         FadeIn();

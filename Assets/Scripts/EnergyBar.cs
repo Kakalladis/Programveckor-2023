@@ -26,7 +26,7 @@ public class EnergyBar : MonoBehaviour
     public void SetEnergy(int energy)
     {
         slider.value = energy;
-        if (slider.value == 10f)
+        if (slider.value == 5f)
         {
             specialAttack.canShoot = true;
         }
