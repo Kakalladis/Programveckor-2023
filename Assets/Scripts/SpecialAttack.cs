@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SpecialAttack : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    public int damage = 2;
-    public float range = 6f;
-=======
+
     //Gjord av Hampus
 
     public int damage = 3;
     public float range = 8f;
->>>>>>> Stashed changes
     public Transform firePoint;
     public LineRenderer lineRenderer;
     public Transform player;
