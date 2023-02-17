@@ -34,11 +34,18 @@ public class Enemy2 : MonoBehaviour
     void Update()
     {
 
-       
+
+        timer += Time.deltaTime;// timer för att sjuta.
+
+        if (timer > 1)
+        {
+            timer = 0;
+
+            Shoot();
+        }
 
 
 
-       
 
         Vector2 targetPos = Target.position;
         Direction = targetPos - (Vector2)transform.position;
@@ -65,14 +72,7 @@ public class Enemy2 : MonoBehaviour
         }
         if (Detected)
         {
-            timer += Time.deltaTime;// timer för att sjuta.
-
-            if (timer > 1)
-            {
-                timer = 0;
-
-                Shoot();
-            }
+           
 
             if (Target.transform.position.x > gameObject.transform.position.x && facingRight)
                 Flip();
