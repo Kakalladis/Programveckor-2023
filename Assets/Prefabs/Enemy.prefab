@@ -278,11 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dfd1b9d7f5959458db28a5c89a6e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  footstepInterval: 0.5
-  playerHealth: {fileID: 0}
-  enemy1Animator: {fileID: 6942094581041481774}
-  damage: 1
 --- !u!114 &-5529334462450974609
 MonoBehaviour:
   m_ObjectHideFlags: 0
