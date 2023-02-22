@@ -72,7 +72,7 @@ public class Enemy2 : MonoBehaviour
         }
         if (Detected)
         {
-           
+           // flippar enmeny om man går förbi.
 
             if (Target.transform.position.x > gameObject.transform.position.x && facingRight)
                 Flip();
@@ -93,7 +93,7 @@ public class Enemy2 : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, Range);
+        Gizmos.DrawWireSphere(transform.position, Range);// ger range till enemy
     }
 
     void Flip()//Vänder på sig.

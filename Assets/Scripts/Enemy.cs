@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
   
 
 
-    public void OnTriggerEnter2D(Collider2D collision)// gör skada on contact.
+    public void OnTriggerEnter2D(Collider2D collision)// gör skada on contact mot playern.
     {
         if (collision.gameObject.tag == "Player")
         {

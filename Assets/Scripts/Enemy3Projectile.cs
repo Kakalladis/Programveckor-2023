@@ -20,7 +20,7 @@ public class Enemy3Projectile : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = Player.transform.position - transform.position;
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;//Sjuter mot player.
 
        
     }

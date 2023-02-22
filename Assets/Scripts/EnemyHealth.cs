@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHealth = maxHealth;
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount)//Gör så att enemy tar skada och kan dö.
     {
         enemyHealth -= damageAmount;
 
