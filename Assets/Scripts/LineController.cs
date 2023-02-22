@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LineController : MonoBehaviour
 {
+    //Gjord av Hampus
+
     private LineRenderer lineRenderer;
 
     [SerializeField] private Texture[] textures;
@@ -17,6 +19,7 @@ public class LineController : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
     
+    // animera laser texturen för special weapon
     void Update()
     {
         fpsCounter += Time.deltaTime;
