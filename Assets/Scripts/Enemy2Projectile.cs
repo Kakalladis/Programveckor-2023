@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy2Projectile : MonoBehaviour
+public class Enemy2Projectile : MonoBehaviour//Gjord av Anton
 {
 
     public GameObject enemyProjectile;

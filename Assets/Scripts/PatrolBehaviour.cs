@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolBehaviour : MonoBehaviour
+public class PatrolBehaviour : MonoBehaviour//Gjord av Anton
 {
 
     public float speed;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour //Gjord av Anton
 {
     [SerializeField] int enemyHealth, maxHealth = 3;
     public Enemy3 enemy3;

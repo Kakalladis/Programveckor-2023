@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy3Projectile : MonoBehaviour
+public class Enemy3Projectile : MonoBehaviour//Gjord av Anton
 {
     public PlayerHealth playerHealth;
 

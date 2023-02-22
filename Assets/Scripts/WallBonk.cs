@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WallBonk : MonoBehaviour
-{
+{//Gjord av Anton
 
     public float speed;
     public float rayDist;
@@ -21,9 +21,9 @@ public class WallBonk : MonoBehaviour
     {
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);// går åt höger.
-        RaycastHit2D wallCheck = Physics2D.Raycast(groundDetect.position, Vector2.right, rayDist);// Kollar om det finns mark under enemy.
+        RaycastHit2D wallCheck = Physics2D.Raycast(groundDetect.position, Vector2.right, rayDist);// Kollar om det finns en vägg
 
-        if (wallCheck.collider == true)//Vänder håll om platformen tar slut.
+        if (wallCheck.collider == true)//Vänder håll om vägg ivägen.
         {
             if (moveRight)
             {

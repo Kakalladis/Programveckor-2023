@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy2 : MonoBehaviour
+public class Enemy2 : MonoBehaviour//Gjord av Anton
 {
     [SerializeField] public float speed;
     [SerializeField] GameObject player;
