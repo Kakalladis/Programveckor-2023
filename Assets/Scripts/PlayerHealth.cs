@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    //Gjord av Hampus
 
     [SerializeField]
     AudioSource hurtSound;
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    //ta damage + animationer
     public void TakeDamage(int damage)
     {
         animator.SetTrigger("Take Damage");
@@ -40,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // dö + animationer + ändra scen
     public void Die()
     {
         animator.SetBool("Is Dead", true);

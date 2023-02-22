@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    //Gjord av Hampus
+
     [SerializeField] private Vector2 parallaxEffectMultiplier;
 
     private Transform cameraTransform;
@@ -21,6 +23,7 @@ public class Parallax : MonoBehaviour
 
     void LateUpdate()
     {
+        //gör så att bakgrunden är oändlig och gör så att den flyttar på sig långsammare
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
         transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.x);
         lastCameraPosition = cameraTransform.position;

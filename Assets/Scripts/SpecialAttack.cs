@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpecialAttack : MonoBehaviour
 {
-
     //Gjord av Hampus
 
     public int damage = 3;
@@ -45,11 +44,13 @@ public class SpecialAttack : MonoBehaviour
         }
     }
 
+    //Skjuta
     IEnumerator Shoot()
     {
         RaycastHit2D[] hits;
         hits = Physics2D.RaycastAll(firePoint.position, firePoint.right, range);
 
+        //gör så enemies tar damage
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit2D hit = hits[i];
@@ -70,6 +71,7 @@ public class SpecialAttack : MonoBehaviour
             }
         }
         
+        //roterar där lasern kommer ifrån baserat på spelarens rotation
         if (player.rotation == Quaternion.Euler(0, -180, 0))
         {
             lineRenderer.SetPosition(0, firePoint.position);
@@ -80,12 +82,14 @@ public class SpecialAttack : MonoBehaviour
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, firePoint.position + new Vector3(8, 0, 0));
         }
-
+        
+        //fade in och fade out
         FadeIn();
         yield return new WaitForSeconds(1.5f);
         FadeOut();
     }
 
+    // fade in linje
     public void FadeIn()
     {
         lineRenderer.enabled = true;
@@ -104,6 +108,7 @@ public class SpecialAttack : MonoBehaviour
         }
     }
 
+    // fade out linje
     public void FadeOut()
     {
         StartCoroutine(FadeOutEffect());
