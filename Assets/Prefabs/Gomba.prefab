@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footstepInterval: 0
   playerHealth: {fileID: 0}
-  enemy1Animator: {fileID: 0}
+  enemy1Animator: {fileID: 5550179431360250135}
   damage: 1
 --- !u!114 &2166987261332474198
 MonoBehaviour:
