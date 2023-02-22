@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolBehaviour : MonoBehaviour
+public class WallBonk : MonoBehaviour
 {
 
     public float speed;
@@ -19,11 +19,11 @@ public class PatrolBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);// går åt höger.
-        RaycastHit2D groundCheck = Physics2D.Raycast(groundDetect.position, Vector2.down, rayDist);// Kollar om det finns mark under enemy.
-        
 
-        if (groundCheck.collider == false)//Vänder håll om platformen tar slut.
+        transform.Translate(Vector2.right * speed * Time.deltaTime);// går åt höger.
+        RaycastHit2D wallCheck = Physics2D.Raycast(groundDetect.position, Vector2.right, rayDist);// Kollar om det finns mark under enemy.
+
+        if (wallCheck.collider == true)//Vänder håll om platformen tar slut.
         {
             if (moveRight)
             {
@@ -36,6 +36,5 @@ public class PatrolBehaviour : MonoBehaviour
                 moveRight = true;
             }
         }
-        
     }
 }
