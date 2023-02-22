@@ -132,23 +132,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009591055058316610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3794f7e0706b9864ebe69aadbe6b47b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 10ab93267ef691641a7fe3893349c1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  player: {fileID: 8107781257701403092, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
+  speed: 0
+  player: {fileID: 0}
   enemy2Animator: {fileID: 4270946099737653291}
   enemyProjectile: {fileID: 5142363991520784593, guid: 031b5109c56d1314eb67f1f78407acb9, type: 3}
   eProjectileSpawnPoint: {fileID: 1009591054617658990}
-  enemyProjectilePrefab: {fileID: 5142363991520784593, guid: 031b5109c56d1314eb67f1f78407acb9, type: 3}
+  enemyProjectilePrefab: {fileID: 0}
   enemyProjectileSpeed: 10
   enemy: {fileID: 1009591055058316610}
-  Range: 10
-  Target: {fileID: 8107781257701403088, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
+  Range: 0
+  Target: {fileID: 0}
   facingRight: 0
   mask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 0
   timer: 0
 --- !u!61 &1009591055058316632
 BoxCollider2D:

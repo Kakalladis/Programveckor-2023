@@ -239,6 +239,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1009591055058316610, guid: 5fb69961426201b44aa81368dcf2c806, type: 3}
   m_PrefabInstance: {fileID: 1009591054571987880}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &298357299 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4270946099737653291, guid: 5fb69961426201b44aa81368dcf2c806, type: 3}
+  m_PrefabInstance: {fileID: 1009591054571987880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &298357306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,15 +257,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  player: {fileID: 0}
-  enemy2Animator: {fileID: 0}
-  enemyProjectile: {fileID: 0}
-  eProjectileSpawnPoint: {fileID: 0}
+  player: {fileID: 1871942446}
+  enemy2Animator: {fileID: 298357299}
+  enemyProjectile: {fileID: 5142363991520784593, guid: 031b5109c56d1314eb67f1f78407acb9, type: 3}
+  eProjectileSpawnPoint: {fileID: 2057008772}
   enemyProjectilePrefab: {fileID: 0}
   enemyProjectileSpeed: 10
-  enemy: {fileID: 0}
-  Range: 0
-  Target: {fileID: 0}
+  enemy: {fileID: 298357297}
+  Range: 5
+  Target: {fileID: 969504884}
   facingRight: 0
   mask:
     serializedVersion: 2
@@ -1795,6 +1800,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &2057008772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1009591054617658990, guid: 5fb69961426201b44aa81368dcf2c806, type: 3}
+  m_PrefabInstance: {fileID: 1009591054571987880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2144859068
 PrefabInstance:
   m_ObjectHideFlags: 0
