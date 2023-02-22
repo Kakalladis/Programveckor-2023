@@ -76,7 +76,7 @@ public class Enemy3 : MonoBehaviour
     }
 
     
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()// ger enemy en specifik range.
     {
         Gizmos.DrawWireSphere(transform.position, Range);
     }

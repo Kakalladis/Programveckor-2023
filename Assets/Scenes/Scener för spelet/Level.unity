@@ -344,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107781257701403088, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58
+      value: 17.56
       objectReference: {fileID: 0}
     - target: {fileID: 8107781257701403088, guid: da73999bef736124e8b03e281bdbfa42, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49060,8 +49060,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7981651320417426054, guid: b00657e176699534e9ac08adeefc55a2, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1845818
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981651320417426054, guid: b00657e176699534e9ac08adeefc55a2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00049591064
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00657e176699534e9ac08adeefc55a2, type: 3}
+--- !u!1 &1259374567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981651320417426051, guid: b00657e176699534e9ac08adeefc55a2, type: 3}
+  m_PrefabInstance: {fileID: 1259374566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1259374568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7981651320417426053, guid: b00657e176699534e9ac08adeefc55a2, type: 3}
+  m_PrefabInstance: {fileID: 1259374566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1259374569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259374567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc4ae9d9b6d18f43b71b6fead749618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  rayDist: 2
+  groundDetect: {fileID: 1498838679}
 --- !u!1 &1284221636
 GameObject:
   m_ObjectHideFlags: 0
@@ -49932,10 +49965,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Space to shot \nArrows to aim"
+  m_text: "SPACE TO SHOOT \nARROWS TO AIM"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6c04ac67d1f471d40836b011f0777e36, type: 2}
+  m_sharedMaterial: {fileID: -1528252716701253499, guid: 6c04ac67d1f471d40836b011f0777e36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -49959,8 +49992,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -50874,6 +50907,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb69961426201b44aa81368dcf2c806, type: 3}
+--- !u!1 &1498838678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498838679}
+  m_Layer: 0
+  m_Name: GroundDetect
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498838679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498838678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: -0.10000038, z: -6.5836654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1259374568}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538014402
 GameObject:
   m_ObjectHideFlags: 0
@@ -51217,8 +51281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.8, y: 32.7}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: -64.524, y: 32.188}
+  m_SizeDelta: {x: 532.509, y: 77.592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621795399
 MonoBehaviour:
@@ -51240,12 +51304,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'W.A.D To move
+  m_text: 'W.A.D TO MOVE
 
-    Q For super attack'
+    Q FOR SUPER ATTACK'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6c04ac67d1f471d40836b011f0777e36, type: 2}
+  m_sharedMaterial: {fileID: -1528252716701253499, guid: 6c04ac67d1f471d40836b011f0777e36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -51269,8 +51333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -51305,7 +51369,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -1.128891, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f;
+    
 
-    Rigidbody2D myRigidbody;
+     Rigidbody2D myRigidbody;
 
-    float timer;
+     float timer;
 
-    [SerializeField] float footstepInterval;
+     [SerializeField] float footstepInterval;
 
-    AudioSource goombaWalk;
-
-
-    public PlayerHealth playerHealth;
-    public Animator enemy1Animator;
-
-    public int damage = 1;
+     AudioSource goombaWalk;
 
 
+     public PlayerHealth playerHealth;
+     public Animator enemy1Animator;
+
+     public int damage = 1;
+
+   
+
+    
     
 
     // Start is called before the first frame update
@@ -40,7 +42,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+       
+
 
         timer += Time.deltaTime;
 
@@ -50,31 +54,21 @@ public class Enemy : MonoBehaviour
             timer = 0;
         }
 
-        if (IsFacingRight())//Vänder på gubben om den går in i något eller om golvet tar slut.
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, 0f);
-        }
-        else
-        {
-            myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
-        }
+       
     }
 
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), transform.localScale.y);
+       
         enemy1Animator.SetTrigger("Enemy 1 Damage");
 
     }
 
-    public bool IsFacingRight()
-    {
-        return transform.localScale.x > Mathf.Epsilon;
-    }
+  
 
 
-    public void OnTriggerEnter2D(Collider2D collision)// gör skada on contact.
+    public void OnTriggerEnter2D(Collider2D collision)// gör skada on contact mot playern.
     {
         if (collision.gameObject.tag == "Player")
         {
