@@ -37,17 +37,16 @@ public class Enemy2 : MonoBehaviour
 
         timer += Time.deltaTime;// timer för att sjuta.
 
+
         if (timer > 1)
         {
             timer = 0;
 
             Shoot();
-        }
 
 
 
-
-        Vector2 targetPos = Target.position;
+            Vector2 targetPos = Target.position;
         Direction = targetPos - (Vector2)transform.position;
         Debug.DrawRay(transform.position, Direction * Range);
         RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range,mask);
@@ -78,6 +77,9 @@ public class Enemy2 : MonoBehaviour
                 Flip();
             if (Target.transform.position.x < gameObject.transform.position.x && !facingRight)
                 Flip();
+
+           
+            }
         }
         
 
